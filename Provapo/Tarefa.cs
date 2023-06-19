@@ -25,59 +25,66 @@ namespace Provapo
         private void button1_Click(object sender, EventArgs e)
         {
 
-            double valor;
-            double limpeza = 50;
-            double troca = 200;
-            double formatação = 100;
-            //pix = 10. cartao = 0
+           try
+            {
+                double valor;
+
+                if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Formatação")
+                {
+                    valor = 100 - (100 * 0.20);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Limpeza")
+                {
+                    valor = 50 - (50 * 0.20);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Troca de peças")
+                {
+                    valor = 200 - (200 * 0.20);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Pix" && box_servico.Text == "Formatação")
+                {
+                    valor = 100 - (100 * 0.10);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Pix" && box_servico.Text == "Limpeza")
+                {
+                    valor = 50 - (50 * 0.10);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Pix" && box_servico.Text == "Troca de peças")
+                {
+                    valor = 200 - (200 * 0.10);
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Cartao" && box_servico.Text == "Formatação")
+                {
+                    valor = 100;
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Cartao" && box_servico.Text == "Limpeza")
+                {
+                    valor = 50;
+                    lb_diferentes.Text = $"{valor}";
+                }
+                if (box_pagamento.Text == "Cartao" && box_servico.Text == "Troca de peças")
+                {
+                    valor = 200;
+
+                    lb_diferentes.Text = $"{valor}";
+                }
+            }
+             catch(Exception ex)
+            {
+                lb_diferentes.Text = ex.Message;    
+            }
+                
+           
 
 
-            if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Formatação")
-            {
-                valor = 100 - (100 * 0.20);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Limpeza")
-            {
-                valor = 50 - (50 * 0.20);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Dinheiro" && box_servico.Text == "Troca de peças")
-            {
-                valor = 200 - (200 * 0.20);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Pix" && box_servico.Text == "Formatação")
-            {
-                valor = 100 - (100 * 0.10);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Pix" && box_servico.Text == "Limpeza")
-            {
-                valor = 50 - (50 * 0.10);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Pix" && box_servico.Text == "Troca de peças")
-            {
-                valor = 200 - (200 * 0.10);
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Cartao" && box_servico.Text == "Formatação")
-            {
-                valor = 100;
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Cartao" && box_servico.Text == "Limpeza")
-            {
-                valor = 50;
-                lb_diferentes.Text = $"{valor}";
-            }
-            if (box_pagamento.Text == "Cartao" && box_servico.Text == "Troca de peças")
-            {
-                valor = 200;
-
-                lb_diferentes.Text = $"{valor}";
-            }
+           
 
 
         }
